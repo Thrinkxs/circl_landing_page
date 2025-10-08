@@ -1,36 +1,174 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Circl Landing Page
+
+A minimalist, Apple-inspired landing page for Circl - Building connections that matter.
+
+## Design Philosophy
+
+This landing page follows the principle of "extreme restraint" - every pixel serves a purpose. Drawing inspiration from Apple's design language and Mosaic Styles' minimalism, the page whispers luxury rather than shouting it.
+
+## Features
+
+- **Responsive Design**: Optimized for mobile, tablet, and desktop
+- **Glass Morphism**: Beautiful frosted glass effects with backdrop blur
+- **Micro-Animations**: Smooth, purposeful animations that enhance UX
+- **Accessibility**: AAA color contrast, keyboard navigation, screen reader support
+- **Performance**: Optimized for Core Web Vitals
+
+## Tech Stack
+
+- **Framework**: Next.js 15.5.4 with App Router
+- **Styling**: Tailwind CSS v4 with custom design system
+- **Typography**: Inter font with Apple system font fallbacks
+- **Animations**: Custom CSS animations with cubic-bezier easing
+
+## Color Palette
+
+- **Primary Teal**: `#4ECDC4` - CTAs and accents
+- **Text Hierarchy**:
+  - Headlines: `#1A252F`
+  - Primary text: `#2C3E50`
+  - Secondary text: `#64748B`
+  - Tertiary/muted: `#94A3B8`
+- **Success Green**: `#52C41A`
+- **Background**: Subtle gradient from `#f5f7fa` to `#e9ecef`
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone [repository-url]
+   cd circl-landing-page
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+### Build for Production
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Form Handling
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The waitlist form currently includes:
+- Email validation with regex pattern
+- Loading states and success feedback
+- Error handling with inline messages
+- Auto-dismissing success notifications (5s)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To integrate with a backend:
+1. Replace the `setTimeout` in `handleSubmit` with your API call
+2. Add proper error handling for network failures
+3. Consider adding analytics tracking
 
-## Learn More
+## Customization
 
-To learn more about Next.js, take a look at the following resources:
+### Colors
+Update the CSS custom properties in `app/globals.css`:
+```css
+:root {
+  --color-primary-teal: #4ECDC4;
+  --color-primary-text: #2C3E50;
+  /* ... */
+}
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Typography
+Modify the font stack in `app/layout.tsx` and `globals.css`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Animations
+Adjust timing and easing in the CSS animations section.
 
-## Deploy on Vercel
+## Performance Targets
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- First Contentful Paint: <1.2s
+- Time to Interactive: <2.5s
+- Lighthouse Score: >95
+- Core Web Vitals: All green
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Browser Support
+
+- Chrome 88+
+- Firefox 84+
+- Safari 14+
+- Edge 88+
+
+## Deployment
+
+### Vercel (Recommended)
+1. Connect your GitHub repository to Vercel
+2. Deploy automatically on push to main branch
+
+### Other Platforms
+```bash
+npm run build
+# Upload the .next/out folder to your hosting provider
+```
+
+## Content Guidelines
+
+### Voice & Tone
+- Confident, not arrogant
+- Clear, not clever
+- Benefit-focused, not feature-focused
+- Minimal adjectives
+
+### Copy Standards
+- Button text: Active voice, clear action
+- Email placeholder: Instructive, not cute
+- Success messages: Include confirmation, be concise
+- Privacy notes: Address concerns proactively but briefly
+
+## Quality Checklist
+
+Before deploying:
+- [ ] Test all form states (empty, valid, invalid, success)
+- [ ] Verify responsive layout on multiple devices
+- [ ] Check touch targets are ≥44px
+- [ ] Validate HTML and CSS
+- [ ] Test keyboard navigation
+- [ ] Verify meta tags for social sharing
+- [ ] Spell-check all copy
+- [ ] Test in multiple browsers
+
+## Analytics & Tracking
+
+To add analytics, consider tracking:
+- Email submission rate (target: 8-12%)
+- Form abandonment rate (target: <30%)
+- Average time on page (target: 45-90s)
+- Scroll depth to features section
+
+## Contributing
+
+1. Follow the established design principles
+2. Maintain the 8pt spacing grid
+3. Use the defined color palette
+4. Keep animations subtle and purposeful
+5. Test on multiple devices and browsers
+
+## License
+
+[Your License Here]
+
+---
+
+*"Remove everything until it breaks, then add back just enough."*
