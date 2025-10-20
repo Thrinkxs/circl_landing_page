@@ -49,7 +49,23 @@ export default function RootLayout({
       <body className={`${hankenGrotesk.variable} antialiased font-sans`}>
         {children}
         <Analytics />
-        <Toaster />
+         <Toaster 
+          position="top-right"
+          // expand={true}
+          // richColors={true}
+          // closeButton={true}
+          // toastOptions={{
+          //   style: {
+          //     background: 'rgba(255, 255, 255, 0.95)',
+          //     backdropFilter: 'blur(20px)',
+          //     border: '1px solid rgba(255, 255, 255, 0.3)',
+          //     borderRadius: '16px',
+          //     padding: '16px 20px',
+          //     fontSize: '16px',
+          //     fontWeight: '500',
+          //     boxShadow: '0 10px 40px rgba(0, 0, 0, 0.15)',
+          //   }}}
+            />
       </body>
     </html>
   );

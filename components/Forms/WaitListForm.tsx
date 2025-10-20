@@ -46,18 +46,28 @@ const WaitListForm = () => {
       if (response.status === 201) {
         toast.success("Thanks! You're on the list. We'll be in touch soon.");
         setLoading(false);
+
         // setSuccessMessage(true);
         await sendWelcomeEmail(values.email);
         await sendToSlack(values.email);
         await addToAirtable(values);
 
-        
         form.reset();
+      } else if (response.status === 409) {
+        // Handle duplicate email error
+        const errorData = await response.json();
+        toast.error(errorData.error || "This email is already on the waitlist!");
+        setLoading(false);
       } else {
-        console.log("Error adding to waitlist", await response.text());
+        // Handle other errors
+        const errorData = await response.json();
+        toast.error(errorData.error || "Something went wrong. Please try again.");
+        setLoading(false);
       }
     } catch (error) {
       console.error("An unexpected error happened:", error);
+      toast.error("Something went wrong. Please try again.");
+      setLoading(false);
     }
   };
 
