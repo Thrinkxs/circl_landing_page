@@ -1,12 +1,10 @@
+
 import { features } from "@/lib/data";
 import FeatureCard from "@/components/FeatureCards/FeatureCard";
 import Logo from "@/components/Logo";
 import WaitListForm from "@/components/Forms/WaitListForm";
 
-
-
 export default function Home() {
-
   return (
     <main className="min-h-screen px-5 py-12 md:px-10 lg:px-20">
       <div className="max-w-3xl mx-auto">
@@ -19,12 +17,12 @@ export default function Home() {
           </h1>
 
           <p className="text-xl md:text-2xl font-medium text-[#4ECDC4] mb-4 tracking-tight">
-Building relationships that open doors.
-
+            Building relationships that open doors.
           </p>
 
           <p className="text-lg text-[#64748B] max-w-2xl mx-auto leading-relaxed mb-12">
-       Circl is the app that helps you build genuine relationships with people you meet in the real world and stay on top of your network.
+            Circl is the app that helps you build genuine relationships with
+            people you meet in the real world and stay on top of your network.
           </p>
 
           {/* Waitlist Form */}

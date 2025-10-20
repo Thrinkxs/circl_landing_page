@@ -19,14 +19,7 @@ const config: Config = {
         success: "#52C41A",
       },
       fontFamily: {
-        sans: [
-          "-apple-system",
-          "BlinkMacSystemFont",
-          "SF Pro Display",
-          "Inter",
-          "system-ui",
-          "sans-serif",
-        ],
+        sans: ["var(--font-hanken)", "-apple-system", "BlinkMacSystemFont", "SF Pro Display", "system-ui", "sans-serif"],
       },
       spacing: {
         "xs": "8px",

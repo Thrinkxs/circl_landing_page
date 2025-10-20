@@ -2,7 +2,7 @@
  export  const features = [
     {
       icon: "⚡",
-      title: "Instant QR Exchange",
+      title: "Instant Contact Sharing",
       description:
         "Scan and connect in seconds with beautiful, privacy-first contact sharing",
     },

@@ -1,17 +1,21 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "@/components/ui/sonner"
 
-const inter = Inter({
-  variable: "--font-inter",
+
+
+const hankenGrotesk = Hanken_Grotesk({
+  variable: "--font-hanken",
   subsets: ["latin"],
-  display: "swap",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
+
 
 export const metadata: Metadata = {
   title: "Circl - Building connections that matter",
   description: "Transform chance encounters into lasting relationships with elegant QR exchanges and intelligent follow-ups that keep your network alive.",
-  keywords: ["networking", "QR code", "connections", "relationships", "contact sharing"],
+  keywords: ["networking app", "Circl", "connections", "relationships"],
   authors: [{ name: "Circl" }],
   openGraph: {
     title: "Circl - Building connections that matter",
@@ -25,7 +29,6 @@ export const metadata: Metadata = {
     title: "Circl - Building connections that matter",
     description: "Transform chance encounters into lasting relationships with elegant QR exchanges and intelligent follow-ups that keep your network alive.",
   },
-  viewport: "width=device-width, initial-scale=1",
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -42,8 +45,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${hankenGrotesk.variable} antialiased font-sans`}>
         {children}
+        <Toaster />
       </body>
     </html>
   );
