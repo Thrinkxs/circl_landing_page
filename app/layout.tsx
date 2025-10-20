@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner"
+import { Analytics } from "@vercel/analytics/next"
 
 
 
@@ -47,6 +48,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${hankenGrotesk.variable} antialiased font-sans`}>
         {children}
+        <Analytics />
         <Toaster />
       </body>
     </html>
